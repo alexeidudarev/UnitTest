@@ -1,4 +1,4 @@
-package com.example.alexeidudarev.unittest;
+package com.example.alexeidudarev.unittest.localTests;
 
 import org.junit.Test;
 

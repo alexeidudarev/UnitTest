@@ -1,4 +1,6 @@
-package com.example.alexeidudarev.unittest;
+package com.example.alexeidudarev.unittest.localTests;
+
+import com.example.alexeidudarev.unittest.SimpleMath;
 
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
@@ -8,7 +10,7 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 public class SimpleMathTest {
-    private static SimpleMath sm;
+    public static SimpleMath sm;
     @BeforeClass
     public static void setup(){
         sm = new SimpleMath();
