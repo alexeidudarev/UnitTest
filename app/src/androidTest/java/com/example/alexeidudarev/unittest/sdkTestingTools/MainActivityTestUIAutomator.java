@@ -10,8 +10,8 @@ package com.example.alexeidudarev.unittest.sdkTestingTools;
  *
  * should use next import
  * to dependencies gradle list
- * androidTestImplementation 'com.android.support.test.uiautomator:uiautomator-v18:2.1.3'
  *
+ * androidTestImplementation 'com.android.support.test.uiautomator:uiautomator-v18:2.1.3'
  * can be used for black box testing with viewer
  */
 
@@ -32,7 +32,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 @RunWith(AndroidJUnit4.class)
-public class MainActivityUseUIAutomator {
+public class MainActivityTestUIAutomator {
 
 
     @Rule
@@ -78,10 +78,15 @@ public class MainActivityUseUIAutomator {
                 .className("android.widget.Button")
                 .clickable(true);
         UiObject buttonaWidget = dev.findObject(btnselector);
-        if(btnselector!=null){
-            buttonaWidget.click();
-        }
 
+        try {
+            if (buttonaWidget.exists() && buttonaWidget.isEnabled()) {
+                buttonaWidget.click();
+            }
+        } catch (UiObjectNotFoundException e) {
+            e.printStackTrace();
+        }
+        
 
         Thread.sleep(2000);
 
