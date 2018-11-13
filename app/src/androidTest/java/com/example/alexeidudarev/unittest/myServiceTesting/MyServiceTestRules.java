@@ -1,4 +1,4 @@
-package com.example.alexeidudarev.unittest.instrumentedTests;
+package com.example.alexeidudarev.unittest.myServiceTesting;
 
 import android.content.Intent;
 import android.os.IBinder;

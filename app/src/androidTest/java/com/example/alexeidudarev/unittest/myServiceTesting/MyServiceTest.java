@@ -1,9 +1,8 @@
-package com.example.alexeidudarev.unittest.instrumentedTests;
+package com.example.alexeidudarev.unittest.myServiceTesting;
 
 import android.content.Intent;
 import android.os.IBinder;
 import android.support.test.InstrumentationRegistry;
-import android.support.test.rule.ServiceTestRule;
 import android.support.test.runner.AndroidJUnit4;
 
 import com.example.alexeidudarev.unittest.MyService;
@@ -18,8 +17,10 @@ import static org.junit.Assert.assertNotNull;
 
 @RunWith(AndroidJUnit4.class)
 public class MyServiceTest {
+
+    //custom rules class added
     @Rule
-    public ServiceTestRule serviceTestRule = new ServiceTestRule();
+    public MyServiceTestRules serviceTestRule = new MyServiceTestRules();
     @Test
     public void testService()throws TimeoutException {
         serviceTestRule.startService(new Intent(InstrumentationRegistry.getContext(),
